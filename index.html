@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Homeschool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginError" class="error"></div>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    // Handle login submission
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const user = authenticate(username, password);
+      if (user) {
+        sessionStorage.setItem('currentUser', user.username);
+        window.location.href = 'dashboard.html';
+      } else {
+        document.getElementById('loginError').textContent = 'Invalid credentials';
+      }
+    });
+  </script>
+</body>
+</html>
