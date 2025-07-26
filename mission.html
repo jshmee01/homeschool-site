@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission | Homeschool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireLogin()">
+  <nav>
+    <div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="progress.html">Progress</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="mission.html">Mission</a>
+    </div>
+    <div>
+      <span id="userGreeting"></span>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>
+      In our home, we teach and disciple our children so they will know and love the Word of God, grow in wisdom
+      and character, and be equipped to serve Christ with humility and courage in whatever calling He places on their
+      lives. We pursue academic excellence not as an end in itself, but as a means of stewardship—preparing our
+      children to think clearly, communicate truth, and walk faithfully in a world that needs the Gospel. Our
+      homeschooling is an act of worship, done in dependence on the Lord, for His glory and our family’s good.
+    </p>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    document.getElementById('userGreeting').textContent = `Logged in as ${getCurrentUser()}`;
+  </script>
+</body>
+</html>
