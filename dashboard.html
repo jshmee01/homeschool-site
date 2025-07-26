@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Homeschool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireLogin()">
+  <nav>
+    <div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="progress.html">Progress</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="mission.html">Mission</a>
+    </div>
+    <div>
+      <span id="userGreeting"></span>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Welcome to your Homeschool Dashboard</h2>
+    <p class="lead">Use the navigation bar to track progress, build schedules, and review your mission statement.</p>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    // Display the current user's name
+    const currentUser = getCurrentUser();
+    document.getElementById('userGreeting').textContent = `Logged in as ${currentUser}`;
+  </script>
+</body>
+</html>
